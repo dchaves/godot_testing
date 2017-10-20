@@ -1,0 +1,239 @@
+[gd_scene load_steps=16 format=1]
+
+[ext_resource path="res://ground/spritesheet_ground.snowLeft.atex" type="Texture" id=1]
+[ext_resource path="res://ground/spritesheet_ground.snowMid.atex" type="Texture" id=2]
+[ext_resource path="res://ground/spritesheet_ground.snowRight.atex" type="Texture" id=3]
+[ext_resource path="res://hud/spritesheet_hud.hudHeart_full.atex" type="Texture" id=4]
+[ext_resource path="res://hud/spritesheet_hud.hudHeart_half.atex" type="Texture" id=5]
+[ext_resource path="res://hud/spritesheet_hud.hudHeart_empty.atex" type="Texture" id=6]
+[ext_resource path="res://hud/spritesheet_hud.hudPlayer_beige.atex" type="Texture" id=7]
+[ext_resource path="res://hud/spritesheet_hud.hudPlayer_blue.atex" type="Texture" id=8]
+[ext_resource path="res://hud/spritesheet_hud.hudPlayer_green.atex" type="Texture" id=9]
+[ext_resource path="res://hud/spritesheet_hud.hudPlayer_pink.atex" type="Texture" id=10]
+[ext_resource path="res://hud/spritesheet_hud.hudPlayer_yellow.atex" type="Texture" id=11]
+[ext_resource path="res://hud/spritesheet_hud.hud0.atex" type="Texture" id=12]
+[ext_resource path="res://hud/spritesheet_hud.hud1.atex" type="Texture" id=13]
+[ext_resource path="res://hud/spritesheet_hud.hud2.atex" type="Texture" id=14]
+[ext_resource path="res://hud/spritesheet_hud.hud3.atex" type="Texture" id=15]
+
+[node name="HUD" type="CanvasLayer"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Life" type="Node2D" parent="."]
+
+transform/pos = Vector2( 64, 48 )
+transform/scale = Vector2( 2, 0.5 )
+
+[node name="Node2D" type="Node2D" parent="Life"]
+
+[node name="Sprite" type="Sprite" parent="Life/Node2D"]
+
+transform/pos = Vector2( -32, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite1" type="Sprite" parent="Life/Node2D"]
+
+transform/pos = Vector2( -16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Life/Node2D"]
+
+transform/pos = Vector2( 0, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="Life/Node2D"]
+
+transform/pos = Vector2( 16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Heart_0" type="Sprite" parent="Life"]
+
+transform/pos = Vector2( -32, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Heart_1" type="Sprite" parent="Life"]
+
+transform/pos = Vector2( -16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Heart_2" type="Sprite" parent="Life"]
+
+transform/pos = Vector2( 0, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Heart_3" type="Sprite" parent="Life"]
+
+transform/pos = Vector2( 16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Aliens" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 64, 16 )
+transform/scale = Vector2( 2, 0.5 )
+
+[node name="Background" type="Node2D" parent="Aliens"]
+
+editor/display_folded = true
+transform/pos = Vector2( 8, 0 )
+transform/scale = Vector2( 1.25, 1 )
+
+[node name="Sprite" type="Sprite" parent="Aliens/Background"]
+
+transform/pos = Vector2( -32, -32 )
+transform/scale = Vector2( 0.1, 0.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite1" type="Sprite" parent="Aliens/Background"]
+
+transform/pos = Vector2( -19.2, -32 )
+transform/scale = Vector2( 0.1, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Aliens/Background"]
+
+transform/pos = Vector2( -6.4, -32 )
+transform/scale = Vector2( 0.1, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="Aliens/Background"]
+
+transform/pos = Vector2( 6.4, -32 )
+transform/scale = Vector2( 0.1, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="Aliens/Background"]
+
+transform/pos = Vector2( 19.2, -32 )
+transform/scale = Vector2( 0.1, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Alien_0" type="Sprite" parent="Aliens"]
+
+transform/pos = Vector2( -32, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Alien_1" type="Sprite" parent="Aliens"]
+
+transform/pos = Vector2( -16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 8 )
+centered = false
+modulate = Color( 0.410156, 0.410156, 0.410156, 1 )
+
+[node name="Alien_2" type="Sprite" parent="Aliens"]
+
+transform/pos = Vector2( 0, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 9 )
+centered = false
+modulate = Color( 0.410156, 0.410156, 0.410156, 1 )
+
+[node name="Alien_3" type="Sprite" parent="Aliens"]
+
+transform/pos = Vector2( 16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 10 )
+centered = false
+modulate = Color( 0.410156, 0.410156, 0.410156, 1 )
+
+[node name="Alien_4" type="Sprite" parent="Aliens"]
+
+transform/pos = Vector2( 32, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+modulate = Color( 0.410156, 0.410156, 0.410156, 1 )
+
+[node name="Timer" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 960, 16 )
+transform/scale = Vector2( 2, 0.5 )
+
+[node name="Background" type="Node2D" parent="Timer"]
+
+[node name="Sprite" type="Sprite" parent="Timer/Background"]
+
+transform/pos = Vector2( -32, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite1" type="Sprite" parent="Timer/Background"]
+
+transform/pos = Vector2( -16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="Timer/Background"]
+
+transform/pos = Vector2( 0, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="Timer/Background"]
+
+transform/pos = Vector2( 16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Number_0" type="Sprite" parent="Timer"]
+
+transform/pos = Vector2( -32, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Number_1" type="Sprite" parent="Timer"]
+
+transform/pos = Vector2( -16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Number_2" type="Sprite" parent="Timer"]
+
+transform/pos = Vector2( 0, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Number_3" type="Sprite" parent="Timer"]
+
+transform/pos = Vector2( 16, -32 )
+transform/scale = Vector2( 0.125, 0.5 )
+texture = ExtResource( 15 )
+centered = false
+
+

@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://ground/ground.tres" type="TileSet" id=1]
+[ext_resource path="res://background/colored_grass.png" type="Texture" id=2]
+
+[node name="level_0" type="StaticBody2D"]
+
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TileMap" type="TileMap" parent="."]
+
+transform/scale = Vector2( 0.5, 0.5 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = true
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 2
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 589835, 3, 589837, 4, 589839, 4, 589841, 4, 589843, 4, 589845, 5, 655406, 0, 655408, 4, 655410, 4, 655412, 4, 655414, 4, 655416, 4, 655418, 4, 655420, 4, 655422, 4, 655424, 4, 655426, 4, 655428, 5, 851993, 0, 851995, 4, 851997, 4, 851999, 4, 852001, 4, 852003, 4, 852005, 4, 852007, 4, 852009, 4, 852011, 5, 917505, 3, 917507, 4, 917509, 4, 917511, 4, 917513, 4, 917515, 4, 917517, 5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="background" type="ParallaxLayer" parent="ParallaxBackground"]
+
+motion/scale = Vector2( 0.5, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/background"]
+
+transform/pos = Vector2( 0, -128 )
+texture = ExtResource( 2 )
+centered = false
+
+
